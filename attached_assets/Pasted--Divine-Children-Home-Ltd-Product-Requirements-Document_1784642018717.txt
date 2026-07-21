@@ -1,0 +1,774 @@
+# Divine Children Home Ltd
+## Product Requirements Document (PRD)
+
+---
+
+# Project Overview
+
+## Project Name
+
+Divine Children Home Ltd
+
+---
+
+## Project Type
+
+Professional Corporate Website
+
+---
+
+## Industry
+
+Children's Residential Care
+
+Supported Living
+
+Residential Children's Home
+
+Child Protection
+
+Social Care
+
+Care Recruitment
+
+---
+
+# Project Vision
+
+Create a world-class corporate website for Divine Children Home Ltd that inspires trust among Local Authorities, Ofsted, parents, guardians, referral agencies, partners, and future employees.
+
+The website should communicate professionalism, safeguarding, warmth, compassion, excellence, and transparency while presenting Divine Children Home Ltd as a premium residential care provider.
+
+The website should not resemble a generic WordPress theme.
+
+Instead, it should feel like a modern SaaS-quality corporate website with excellent UX, beautiful typography, engaging imagery, subtle animations, and clear calls-to-action.
+
+The website should be inspired by:
+
+- Action For Children
+- Keys Group
+- Pure Grace Homes
+
+without copying any layouts or copyrighted assets.
+
+---
+
+# Primary Goals
+
+The website exists to:
+
+• Increase credibility.
+
+• Generate referral enquiries.
+
+• Attract Local Authority partnerships.
+
+• Recruit qualified staff.
+
+• Explain services clearly.
+
+• Showcase safeguarding commitment.
+
+• Demonstrate professionalism.
+
+• Improve Google rankings.
+
+• Increase enquiries.
+
+• Provide contact information.
+
+• Showcase company values.
+
+---
+
+# Target Audience
+
+## Primary Audience
+
+Local Authorities
+
+Social Workers
+
+Placement Officers
+
+Commissioners
+
+Referral Teams
+
+Government Agencies
+
+---
+
+## Secondary Audience
+
+Parents
+
+Guardians
+
+Young People
+
+Healthcare Professionals
+
+Education Partners
+
+---
+
+## Third Audience
+
+Potential Employees
+
+Support Workers
+
+Residential Care Workers
+
+Managers
+
+Administrators
+
+---
+
+# Brand Personality
+
+Professional
+
+Warm
+
+Safe
+
+Modern
+
+Reliable
+
+Transparent
+
+Compassionate
+
+Trustworthy
+
+Child-Centered
+
+Hopeful
+
+Premium
+
+---
+
+# Emotional Experience
+
+Visitors should feel:
+
+Safe
+
+Confident
+
+Supported
+
+Inspired
+
+Welcomed
+
+Respected
+
+Comfortable
+
+Hopeful
+
+---
+
+# Brand Colours
+
+Primary
+
+Deep Navy Blue
+
+#123B6D
+
+---
+
+Secondary
+
+Soft Sky Blue
+
+#4FA9DD
+
+---
+
+Accent
+
+Warm Orange
+
+#F39C12
+
+---
+
+Neutral
+
+White
+
+#FFFFFF
+
+---
+
+Background
+
+#F8FAFC
+
+---
+
+Dark Text
+
+#1F2937
+
+---
+
+Success
+
+#22C55E
+
+---
+
+Error
+
+#EF4444
+
+---
+
+Typography
+
+Primary Font
+
+Inter
+
+Secondary Font
+
+Poppins
+
+Headings
+
+700-800 Weight
+
+Body
+
+400-500 Weight
+
+---
+
+# Design Principles
+
+Minimal
+
+Clean
+
+Whitespace Focused
+
+Rounded Corners
+
+Modern Cards
+
+Accessible
+
+Fast
+
+Readable
+
+Professional
+
+---
+
+# UI Inspiration
+
+The website should combine:
+
+Action For Children
+
+Professional storytelling
+
+Large imagery
+
+Community feel
+
+---
+
+Keys Group
+
+Corporate structure
+
+Professional credibility
+
+Modern layouts
+
+---
+
+Pure Grace Homes
+
+Warmth
+
+Family-oriented design
+
+Simple navigation
+
+---
+
+# Accessibility
+
+Must achieve WCAG 2.2 AA compliance.
+
+Keyboard Navigation
+
+ARIA labels
+
+Proper heading hierarchy
+
+Focus indicators
+
+Screen Reader Friendly
+
+Alt text
+
+Colour contrast ratio
+
+Reduced motion support
+
+---
+
+# Performance Targets
+
+PageSpeed
+
+95+
+
+Lighthouse
+
+95+
+
+Accessibility
+
+100
+
+SEO
+
+100
+
+Best Practices
+
+100
+
+CLS below 0.1
+
+FCP below 1.5s
+
+LCP below 2.5s
+
+---
+
+# SEO Goals
+
+Target Keywords
+
+Children's Home
+
+Residential Care
+
+Residential Children's Home
+
+Children's Residential Care
+
+Supported Living
+
+Residential Care Provider
+
+Child Care Services
+
+Residential Care UK
+
+Residential Care Home
+
+Safeguarding Children
+
+---
+
+Meta Titles
+
+Unique per page
+
+---
+
+Meta Descriptions
+
+Unique per page
+
+---
+
+OpenGraph
+
+Enabled
+
+---
+
+Twitter Cards
+
+Enabled
+
+---
+
+Schema.org
+
+Organization
+
+LocalBusiness
+
+Breadcrumb
+
+FAQ
+
+Article
+
+---
+
+# Website Pages
+
+1 Home
+
+2 About Us
+
+3 Our Homes
+
+4 Services
+
+5 Referral Process
+
+6 Careers
+
+7 News
+
+8 Resources
+
+9 Contact
+
+10 Privacy Policy
+
+11 Terms
+
+12 Cookies
+
+13 Safeguarding
+
+14 Complaints Procedure
+
+15 Gallery
+
+16 FAQs
+
+---
+
+# Homepage Sections
+
+Hero
+
+Mission
+
+Why Choose Us
+
+Services
+
+Our Homes
+
+Our Values
+
+Safeguarding
+
+Testimonials
+
+Statistics
+
+Latest News
+
+Recruitment CTA
+
+Referral CTA
+
+Contact CTA
+
+Footer
+
+---
+
+# Required Features
+
+Responsive Navigation
+
+Mega Menu
+
+Sticky Header
+
+Animated Hero
+
+Call To Actions
+
+Image Gallery
+
+News Blog
+
+Careers
+
+Job Listings
+
+Referral Form
+
+Contact Form
+
+Newsletter
+
+Google Maps
+
+Social Links
+
+Search
+
+Breadcrumbs
+
+FAQs
+
+Cookie Banner
+
+404 Page
+
+Loading States
+
+Empty States
+
+Error Pages
+
+Back To Top
+
+Dark Mode Ready
+
+---
+
+# Security
+
+HTTPS
+
+Form Validation
+
+Spam Protection
+
+Rate Limiting
+
+Sanitized Inputs
+
+Secure Headers
+
+GDPR Ready
+
+---
+
+# CMS Requirements
+
+Editable Content
+
+Editable Homepage
+
+Editable Images
+
+Editable Careers
+
+Editable News
+
+Editable FAQs
+
+Editable Testimonials
+
+Editable Contact Details
+
+Editable SEO
+
+Editable Menus
+
+Editable Footer
+
+---
+
+# Forms
+
+Contact
+
+Referral
+
+Career Application
+
+Newsletter
+
+Volunteer
+
+General Enquiry
+
+---
+
+# Media Requirements
+
+Optimized Images
+
+Lazy Loading
+
+Responsive Images
+
+WebP
+
+AVIF
+
+---
+
+# Animations
+
+Framer Motion
+
+Fade
+
+Slide
+
+Scale
+
+Parallax
+
+Hover
+
+Micro Interactions
+
+Smooth Scrolling
+
+---
+
+# Mobile Requirements
+
+Fully Responsive
+
+Thumb Friendly
+
+Sticky CTA
+
+Fast Loading
+
+Optimized Images
+
+---
+
+# Browser Support
+
+Chrome
+
+Firefox
+
+Safari
+
+Edge
+
+Opera
+
+---
+
+# Technology Stack
+
+Frontend
+
+Next.js 15
+
+React 19
+
+TypeScript
+
+TailwindCSS
+
+Framer Motion
+
+Shadcn UI
+
+Lucide Icons
+
+React Hook Form
+
+Zod
+
+Next SEO
+
+SwiperJS
+
+---
+
+Backend
+
+Supabase
+
+PostgreSQL
+
+Storage
+
+Authentication
+
+Edge Functions
+
+Realtime
+
+---
+
+Deployment
+
+Vercel
+
+Supabase
+
+Cloudflare
+
+GitHub
+
+---
+
+# Coding Standards
+
+Strict TypeScript
+
+Reusable Components
+
+Atomic Design
+
+Feature-Based Folder Structure
+
+Clean Code
+
+SOLID Principles
+
+Accessibility First
+
+SEO First
+
+Performance First
+
+---
+
+# Success Metrics
+
+95+ Lighthouse
+
+100 Accessibility
+
+Responsive on all devices
+
+Less than 2 second loading
+
+Professional appearance
+
+High trust score
+
+High conversion
+
+Excellent UX
+
+Excellent readability
+
+Easy CMS management
+
+Future scalability
+
+---
+
+End of Product Requirements Document

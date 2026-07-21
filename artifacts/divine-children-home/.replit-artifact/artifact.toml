@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Divine Children Home Ltd"
+version = "1.0.0"
+id = "artifacts/divine-children-home"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23337
+
+[services.development]
+run = "pnpm --filter @workspace/divine-children-home run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/divine-children-home", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/divine-children-home/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23337"
+BASE_PATH = "/"

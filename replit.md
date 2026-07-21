@@ -1,36 +1,56 @@
-# [Project name]
+# Divine Children Home Ltd
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A world-class corporate website for Divine Children Home Ltd — a premium children's residential care and supported living provider in the UK.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm dev:web` — run the frontend (port 23337)
+- `pnpm dev:api` — run the API server (port 8080)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Required env (API): `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` in `artifacts/api-server/.env`
+- Database setup: see `SUPABASE_SETUP.md`
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
+- Frontend: React + Vite, TailwindCSS, Framer Motion, Wouter (routing)
 - API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
+- Database: Supabase (PostgreSQL + Storage)
+- Validation: Zod (`zod/v4`)
 - API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Build: esbuild (ESM bundle)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/divine-children-home/src/` — frontend React app
+- `artifacts/api-server/src/routes/` — API route handlers (jobs, news, faqs, testimonials, gallery, stats, forms)
+- `lib/supabase/` — Supabase client, types, mappers, storage helpers
+- `supabase/migrations/` — SQL migration scripts for Supabase
+- `lib/api-spec/openapi.yaml` — OpenAPI spec (source of truth)
+- `lib/api-client-react/src/generated/` — generated React Query hooks
+- `lib/api-zod/src/generated/` — generated Zod validation schemas
+
+## Pages
+
+Home, About Us, Our Homes, Services, Referral Process, Careers, News, Resources, Contact, Safeguarding, FAQs, Gallery, Privacy Policy, Terms, Cookies Policy, Complaints Procedure, 404
+
+## Brand
+
+- Primary: Deep Navy #123B6D
+- Secondary: Sky Blue #4FA9DD
+- Accent: Warm Orange #F39C12
+- Fonts: Inter (body), Poppins (headings)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+- OpenAPI-first: all API contracts defined in `lib/api-spec/openapi.yaml` before implementation
+- Supabase as primary database and image storage (no local PostgreSQL or Docker required)
+- Referral form includes urgency/placement-type fields for Local Authority workflows
+- Form submissions store a generated reference number for tracking
+- Stats stored in Supabase `site_stats` table (singleton row)
+- Newsletter subscription silently ignores duplicate emails to prevent enumeration
 
 ## User preferences
 
@@ -38,8 +58,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- After any OpenAPI spec change, re-run codegen before using updated types
+- OpenAPI `format: email` is not supported by the current Zod version — omit from spec
+- Run Supabase migrations after schema changes (see `SUPABASE_SETUP.md`)
+- Never expose `SUPABASE_SERVICE_ROLE_KEY` to the frontend

@@ -3,20 +3,34 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Divine Children Home Ltd API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: jobs
+    description: Job listings
+  - name: news
+    description: News and blog posts
+  - name: faqs
+    description: Frequently asked questions
+  - name: testimonials
+    description: Testimonials
+  - name: gallery
+    description: Gallery images
+  - name: stats
+    description: Homepage statistics
+  - name: forms
+    description: Form submissions
+
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,13 +38,438 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /jobs:
+    get:
+      operationId: listJobs
+      tags: [jobs]
+      summary: List all active job listings
+      responses:
+        "200":
+          description: List of jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Job"
+
+  /jobs/{id}:
+    get:
+      operationId: getJob
+      tags: [jobs]
+      summary: Get a single job listing
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        "404":
+          description: Not found
+
+  /news:
+    get:
+      operationId: listNews
+      tags: [news]
+      summary: List all news articles
+      responses:
+        "200":
+          description: List of news articles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NewsArticle"
+
+  /news/{slug}:
+    get:
+      operationId: getNewsArticle
+      tags: [news]
+      summary: Get a single news article by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Article details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsArticle"
+        "404":
+          description: Not found
+
+  /faqs:
+    get:
+      operationId: listFaqs
+      tags: [faqs]
+      summary: List all FAQs
+      responses:
+        "200":
+          description: List of FAQs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Faq"
+
+  /testimonials:
+    get:
+      operationId: listTestimonials
+      tags: [testimonials]
+      summary: List all testimonials
+      responses:
+        "200":
+          description: List of testimonials
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testimonial"
+
+  /gallery:
+    get:
+      operationId: listGalleryImages
+      tags: [gallery]
+      summary: List all gallery images
+      responses:
+        "200":
+          description: List of gallery images
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GalleryImage"
+
+  /stats:
+    get:
+      operationId: getStats
+      tags: [stats]
+      summary: Get homepage statistics
+      responses:
+        "200":
+          description: Site-wide stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SiteStats"
+
+  /forms/contact:
+    post:
+      operationId: submitContactForm
+      tags: [forms]
+      summary: Submit a general contact enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactInput"
+      responses:
+        "201":
+          description: Submitted successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormResponse"
+        "400":
+          description: Validation error
+
+  /forms/referral:
+    post:
+      operationId: submitReferralForm
+      tags: [forms]
+      summary: Submit a child referral enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReferralInput"
+      responses:
+        "201":
+          description: Submitted successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormResponse"
+        "400":
+          description: Validation error
+
+  /forms/career:
+    post:
+      operationId: submitCareerApplication
+      tags: [forms]
+      summary: Submit a job application
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CareerApplicationInput"
+      responses:
+        "201":
+          description: Submitted successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormResponse"
+        "400":
+          description: Validation error
+
+  /forms/newsletter:
+    post:
+      operationId: subscribeNewsletter
+      tags: [forms]
+      summary: Subscribe to the newsletter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewsletterInput"
+      responses:
+        "201":
+          description: Subscribed successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormResponse"
+        "400":
+          description: Validation error
+
 components:
   schemas:
     HealthStatus:
       type: object
+      required: [status]
       properties:
         status:
           type: string
-      required:
-        - status
 
+    Job:
+      type: object
+      required: [id, title, department, location, type, description, salary, postedAt, isActive]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        department:
+          type: string
+        location:
+          type: string
+        type:
+          type: string
+          description: "full-time, part-time, bank"
+        description:
+          type: string
+        requirements:
+          type: ["string", "null"]
+        salary:
+          type: string
+        postedAt:
+          type: string
+          format: date-time
+        isActive:
+          type: boolean
+
+    NewsArticle:
+      type: object
+      required: [id, title, slug, excerpt, content, category, publishedAt, imageUrl]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        slug:
+          type: string
+        excerpt:
+          type: string
+        content:
+          type: string
+        category:
+          type: string
+        publishedAt:
+          type: string
+          format: date-time
+        imageUrl:
+          type: string
+        author:
+          type: ["string", "null"]
+
+    Faq:
+      type: object
+      required: [id, question, answer, category, sortOrder]
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        answer:
+          type: string
+        category:
+          type: string
+        sortOrder:
+          type: integer
+
+    Testimonial:
+      type: object
+      required: [id, name, role, organisation, quote, rating]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        role:
+          type: string
+        organisation:
+          type: string
+        quote:
+          type: string
+        rating:
+          type: integer
+        avatarUrl:
+          type: ["string", "null"]
+
+    GalleryImage:
+      type: object
+      required: [id, title, imageUrl, category]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        imageUrl:
+          type: string
+        category:
+          type: string
+        caption:
+          type: ["string", "null"]
+
+    SiteStats:
+      type: object
+      required: [yearsExperience, childrenSupported, staffMembers, homesOperating, ofstedRating, successRate]
+      properties:
+        yearsExperience:
+          type: integer
+        childrenSupported:
+          type: integer
+        staffMembers:
+          type: integer
+        homesOperating:
+          type: integer
+        ofstedRating:
+          type: string
+        successRate:
+          type: integer
+
+    ContactInput:
+      type: object
+      required: [name, email, phone, subject, message]
+      properties:
+        name:
+          type: string
+          minLength: 2
+        email:
+          type: string
+        phone:
+          type: string
+        subject:
+          type: string
+        message:
+          type: string
+          minLength: 10
+        organisation:
+          type: ["string", "null"]
+
+    ReferralInput:
+      type: object
+      required: [referrerName, referrerRole, referrerOrganisation, referrerEmail, referrerPhone, childAge, childGender, localAuthority, placementType, urgency, supportNeeds]
+      properties:
+        referrerName:
+          type: string
+        referrerRole:
+          type: string
+        referrerOrganisation:
+          type: string
+        referrerEmail:
+          type: string
+        referrerPhone:
+          type: string
+        childAge:
+          type: integer
+        childGender:
+          type: string
+        localAuthority:
+          type: string
+        placementType:
+          type: string
+          description: "residential, supported-living, emergency"
+        urgency:
+          type: string
+          description: "immediate, within-week, within-month, planned"
+        supportNeeds:
+          type: string
+        additionalInfo:
+          type: ["string", "null"]
+
+    CareerApplicationInput:
+      type: object
+      required: [firstName, lastName, email, phone, position, coverLetter, rightToWork]
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        position:
+          type: string
+        jobId:
+          type: ["integer", "null"]
+        coverLetter:
+          type: string
+        experience:
+          type: ["string", "null"]
+        qualifications:
+          type: ["string", "null"]
+        rightToWork:
+          type: boolean
+
+    NewsletterInput:
+      type: object
+      required: [email]
+      properties:
+        email:
+          type: string
+        name:
+          type: ["string", "null"]
+
+    FormResponse:
+      type: object
+      required: [success, message]
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        referenceNumber:
+          type: ["string", "null"]
