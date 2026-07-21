@@ -76,7 +76,7 @@
   --accent: 37 90% 51%;
   --accent-foreground: 0 0% 100%;
   /* Darker orange for buttons and small text on light backgrounds (WCAG AA) */
-  --accent-strong: 32 85% 38%;
+  --accent-strong: 28 95% 30%;
 
   /* Background #F8FAFC */
   --background: 210 20% 98%;
@@ -131,7 +131,7 @@
   
   --accent: 37 90% 51%;
   --accent-foreground: 0 0% 100%;
-  --accent-strong: 32 85% 38%;
+  --accent-strong: 28 95% 30%;
 
   --background: 210 20% 98%;
   --foreground: 215 28% 17%;

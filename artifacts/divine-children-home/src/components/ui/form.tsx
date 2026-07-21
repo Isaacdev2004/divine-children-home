@@ -42,6 +42,9 @@ const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
   const { getFieldState, formState } = useFormContext()
+  // Subscribe to validation updates so FormMessage re-renders after submit.
+  formState.errors
+  formState.isSubmitted
 
   const fieldState = getFieldState(fieldContext.name, formState)
 

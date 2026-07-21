@@ -9,6 +9,6 @@ test.describe("Referral form", () => {
 
   test("shows emergency phone link", async ({ page }) => {
     await page.goto("/referral");
-    await expect(page.getByRole("link", { name: /0800/i })).toBeVisible();
+    await expect(page.getByRole("main").getByRole("link", { name: /0800/i })).toBeVisible();
   });
 });

@@ -1,9 +1,17 @@
 import { test, expect } from "@playwright/test";
+import { openMobileMenuIfNeeded } from "../helpers";
 
 test.describe("Navigation", () => {
   test("navigates to contact page", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "Contact", exact: true }).first().click();
+    await openMobileMenuIfNeeded(page);
+
+    const contactNav = page.getByLabel("Mobile navigation").getByRole("link", { name: "Contact", exact: true });
+    const contactLink = (await contactNav.isVisible().catch(() => false))
+      ? contactNav
+      : page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Contact", exact: true });
+
+    await contactLink.click();
     await expect(page).toHaveURL(/\/contact/);
     await expect(page.getByRole("heading", { name: /Contact Us/i })).toBeVisible();
   });
@@ -19,6 +27,6 @@ test.describe("Navigation", () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto("/");
     await page.getByRole("button", { name: /open menu/i }).click();
-    await expect(page.getByRole("link", { name: "FAQs" })).toBeVisible();
+    await expect(page.getByLabel("Mobile navigation").getByRole("link", { name: "FAQs" })).toBeVisible();
   });
 });
