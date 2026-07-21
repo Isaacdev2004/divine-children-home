@@ -35,7 +35,7 @@ export function Footer() {
               <span className="text-2xl font-heading font-bold text-white tracking-tight leading-none">
                 Divine Children Home
               </span>
-              <span className="text-xs font-semibold text-accent uppercase tracking-widest mt-1">
+              <span className="text-xs font-semibold text-accent-strong uppercase tracking-widest mt-1">
                 Ltd
               </span>
             </div>

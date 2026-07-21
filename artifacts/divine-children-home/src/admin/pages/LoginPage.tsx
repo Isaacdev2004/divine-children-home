@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
 export default function LoginPage() {
@@ -41,7 +41,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-muted/30 p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="font-heading text-2xl text-primary">Admin Sign In</CardTitle>
+          <h1 className="font-heading text-2xl font-semibold text-primary">Admin Sign In</h1>
           <CardDescription>Divine Children Home Ltd CMS</CardDescription>
         </CardHeader>
         <CardContent>

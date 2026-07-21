@@ -85,7 +85,7 @@ export function Header() {
               <span className="text-xl md:text-2xl font-heading font-bold text-primary tracking-tight leading-none">
                 Divine Children Home
               </span>
-              <span className="text-xs font-semibold text-accent uppercase tracking-widest mt-1">
+              <span className="text-xs font-semibold text-primary uppercase tracking-widest mt-1">
                 Ltd
               </span>
             </div>

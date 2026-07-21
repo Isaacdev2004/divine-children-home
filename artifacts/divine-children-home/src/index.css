@@ -34,6 +34,7 @@
 
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-strong: hsl(var(--accent-strong));
   --color-accent-border: var(--accent-border);
 
   --color-destructive: hsl(var(--destructive));
@@ -71,9 +72,11 @@
   --secondary: 202 68% 59%;
   --secondary-foreground: 0 0% 100%;
   
-  /* Warm Orange #F39C12 */
+  /* Warm Orange #F39C12 — decorative highlights */
   --accent: 37 90% 51%;
   --accent-foreground: 0 0% 100%;
+  /* Darker orange for buttons and small text on light backgrounds (WCAG AA) */
+  --accent-strong: 32 85% 38%;
 
   /* Background #F8FAFC */
   --background: 210 20% 98%;
@@ -128,6 +131,7 @@
   
   --accent: 37 90% 51%;
   --accent-foreground: 0 0% 100%;
+  --accent-strong: 32 85% 38%;
 
   --background: 210 20% 98%;
   --foreground: 215 28% 17%;
