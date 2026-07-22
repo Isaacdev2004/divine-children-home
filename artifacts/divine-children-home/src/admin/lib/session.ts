@@ -1,3 +1,5 @@
+import { resolveApiUrl } from "@/lib/api-base-url";
+
 const SESSION_KEY = "dch-admin-session";
 
 export interface AdminSession {
@@ -41,7 +43,7 @@ export async function getAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch("/api/admin/auth/refresh", {
+    const response = await fetch(resolveApiUrl("/api/admin/auth/refresh"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ refreshToken: session.refreshToken }),

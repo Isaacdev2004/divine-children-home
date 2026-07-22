@@ -1,4 +1,5 @@
 import { getAccessToken, clearStoredSession, type AdminSession } from "./session";
+import { resolveApiUrl } from "@/lib/api-base-url";
 
 export class AdminApiError extends Error {
   constructor(
@@ -28,7 +29,7 @@ async function adminFetch<T>(
     headers.set("Content-Type", "application/json");
   }
 
-  const response = await fetch(`/api/admin${path}`, {
+  const response = await fetch(resolveApiUrl(`/api/admin${path}`), {
     ...options,
     headers,
   });
