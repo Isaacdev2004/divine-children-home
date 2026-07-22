@@ -26,7 +26,8 @@ Deploy the **frontend** to Vercel and the **API** to Render. Supabase stays on [
 | `SUPABASE_URL` | `https://xxxx.supabase.co` |
 | `SUPABASE_SERVICE_ROLE_KEY` | `eyJ...` |
 | `CORS_ORIGIN` | `https://your-app.vercel.app` (update after Vercel deploy) |
-| `ADMIN_RESET_PASSWORD_URL` | `https://your-app.vercel.app/admin/reset-password` |
+
+`ADMIN_RESET_PASSWORD_URL` is **optional** at first deploy — leave it blank or delete it in Render. Add it later once Vercel is live, e.g. `https://your-app.vercel.app/admin/reset-password` (must start with `https://`).
 
 5. Wait for deploy, then verify:
 

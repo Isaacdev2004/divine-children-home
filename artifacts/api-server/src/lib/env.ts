@@ -1,5 +1,20 @@
 import { z } from "zod";
 
+/** Treat unset or blank env values as undefined (common on Render/Vercel dashboards). */
+function optionalEnvString() {
+  return z.preprocess(
+    (value) => (typeof value === "string" && value.trim() === "" ? undefined : value),
+    z.string().optional(),
+  );
+}
+
+function optionalEnvUrl() {
+  return z.preprocess(
+    (value) => (typeof value === "string" && value.trim() === "" ? undefined : value),
+    z.string().url().optional(),
+  );
+}
+
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   PORT: z.coerce.number().int().positive(),
@@ -8,8 +23,8 @@ const envSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z
     .string()
     .min(1, "SUPABASE_SERVICE_ROLE_KEY is required"),
-  CORS_ORIGIN: z.string().optional(),
-  ADMIN_RESET_PASSWORD_URL: z.string().url().optional(),
+  CORS_ORIGIN: optionalEnvString(),
+  ADMIN_RESET_PASSWORD_URL: optionalEnvUrl(),
   TRUST_PROXY: z
     .enum(["true", "false"])
     .optional()
