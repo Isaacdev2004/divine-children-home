@@ -23,6 +23,7 @@ services:
         value: "true"
       - key: CORS_ORIGIN
         sync: false
+        # Example: https://your-app.vercel.app,https://*.vercel.app,https://www.divinechildrenhome.co.uk
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY

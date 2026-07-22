@@ -25,7 +25,7 @@ Deploy the **frontend** to Vercel and the **API** to Render. Supabase stays on [
 |----------|---------|
 | `SUPABASE_URL` | `https://xxxx.supabase.co` |
 | `SUPABASE_SERVICE_ROLE_KEY` | `eyJ...` |
-| `CORS_ORIGIN` | `https://your-app.vercel.app` (update after Vercel deploy) |
+| `CORS_ORIGIN` | `https://divine-children-home-divine-childre.vercel.app,https://*.vercel.app` |
 
 `ADMIN_RESET_PASSWORD_URL` is **optional** at first deploy — leave it blank or delete it in Render. Add it later once Vercel is live, e.g. `https://your-app.vercel.app/admin/reset-password` (must start with `https://`).
 
@@ -77,8 +77,10 @@ Back in **Render** → your API service → **Environment**:
 Update `CORS_ORIGIN` to include **both** URLs (comma-separated, no spaces after commas):
 
 ```
-https://divine-children-home.vercel.app,https://www.divinechildrenhome.co.uk
+https://divine-children-home-divine-childre.vercel.app,https://*.vercel.app,https://www.divinechildrenhome.co.uk
 ```
+
+The `https://*.vercel.app` entry covers future Vercel preview deployments.
 
 Update `ADMIN_RESET_PASSWORD_URL` to your live frontend URL + `/admin/reset-password`.
 
