@@ -1,11 +1,9 @@
 {
+  "installCommand": "cd ../.. && corepack enable && pnpm install --frozen-lockfile",
   "buildCommand": "cd ../.. && pnpm --filter @workspace/divine-children-home run build",
   "outputDirectory": "dist/public",
   "framework": "vite",
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://api.divinechildrenhome.co.uk/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/(.*)",

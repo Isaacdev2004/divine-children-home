@@ -1,0 +1,31 @@
+# Render Blueprint — API server only (frontend deploys to Vercel)
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Connect in Render: Dashboard → New → Blueprint → select this repo.
+
+services:
+  - type: web
+    name: divine-children-home-api
+    runtime: node
+    region: frankfurt
+    plan: starter
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build
+    startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8080"
+      - key: LOG_LEVEL
+        value: info
+      - key: TRUST_PROXY
+        value: "true"
+      - key: CORS_ORIGIN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: ADMIN_RESET_PASSWORD_URL
+        sync: false
