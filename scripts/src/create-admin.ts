@@ -5,12 +5,14 @@
  * Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (load from api-server/.env).
  */
 import { getSupabase } from "@workspace/supabase";
+import { loadApiEnv } from "./load-api-env";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "admin@divine-children-home.com";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "Admin@123!";
 const ADMIN_NAME = process.env.ADMIN_NAME ?? "Super Admin";
 
 async function main() {
+  loadApiEnv();
   const db = getSupabase();
 
   const { data: existingProfile } = await db
@@ -71,7 +73,7 @@ async function linkProfile(
   console.log(`  Email:    ${ADMIN_EMAIL}`);
   console.log(`  Password: ${ADMIN_PASSWORD}`);
   console.log(`  Role:     super_admin`);
-  console.log("  Login:    http://localhost:23337/admin/login");
+  console.log("  Login:    /admin/login");
 }
 
 main().catch((err) => {
