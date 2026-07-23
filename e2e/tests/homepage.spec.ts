@@ -4,7 +4,7 @@ test.describe("Homepage", () => {
   test("loads with hero and primary CTA", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Divine Children Home/i);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText(/Safety|Stability|Hope/i);
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(/Safe|Nurturing|Therapeutic/i);
     await expect(page.getByRole("link", { name: /Make a Referral/i }).first()).toBeVisible();
   });
 

@@ -78,7 +78,7 @@ export default function About() {
                 <Lightbulb className="h-10 w-10 text-white mb-6" />
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
                 <p className="text-secondary-foreground/90 leading-relaxed">
-                  To be the UK's most trusted and respected provider of children's care, setting the gold standard for therapeutic environments and consistently achieving 'Outstanding' outcomes for every child we support.
+                  To be a trusted provider of children's care in the UK, setting a high standard for therapeutic environments and positive outcomes for every child we support.
                 </p>
               </div>
             </Card>
@@ -111,25 +111,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Accreditations */}
+      {/* Registration status */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-primary mb-12">Accreditations & Partnerships</h2>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
-            {/* Visual placeholders for logos */}
-            <div className="flex flex-col items-center gap-3">
-              <ShieldCheck className="h-16 w-16 text-muted-foreground" />
-              <span className="font-bold text-lg text-muted-foreground">Ofsted Registered</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <ShieldCheck className="h-16 w-16 text-muted-foreground" />
-              <span className="font-bold text-lg text-muted-foreground">CQC Compliant</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <ShieldCheck className="h-16 w-16 text-muted-foreground" />
-              <span className="font-bold text-lg text-muted-foreground">Local Authority Partner</span>
-            </div>
-          </div>
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <ShieldCheck className="h-12 w-12 text-secondary mx-auto mb-6" aria-hidden="true" />
+          <h2 className="text-3xl font-heading font-bold text-primary mb-4">Registration Status</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Divine Children Home Ltd is currently progressing through the Ofsted registration process. We will update this website with our registration details and home imagery once the process is complete.
+          </p>
         </div>
       </section>
 

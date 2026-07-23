@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Divine Children Home Ltd",
   shortName: "Divine Children Home",
   description:
-    "Premium residential care for children and young people. OFSTED-rated homes, expert staff, and compassionate 24/7 support across the UK.",
+    "Safe, nurturing residential care for children and young people across the UK. Compassionate support in a warm, therapeutic environment.",
   url: "https://www.divinechildrenhome.co.uk",
   email: "referrals@divinechildrenhome.co.uk",
   infoEmail: "info@divinechildrenhome.co.uk",

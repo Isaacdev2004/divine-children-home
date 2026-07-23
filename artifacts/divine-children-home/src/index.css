@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -64,50 +64,49 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  /* Deep Navy Blue #123B6D */
-  --primary: 213 72% 25%;
+  /* Deep olive green — inspired by warm, natural care branding */
+  --primary: 82 22% 32%;
   --primary-foreground: 0 0% 100%;
   
-  /* Soft Sky Blue #4FA9DD */
-  --secondary: 202 68% 59%;
+  /* Soft sage olive */
+  --secondary: 85 18% 42%;
   --secondary-foreground: 0 0% 100%;
   
-  /* Warm Orange #F39C12 — decorative highlights */
-  --accent: 37 90% 51%;
+  /* Warm gold — primary CTAs */
+  --accent: 42 72% 48%;
   --accent-foreground: 0 0% 100%;
-  /* Darker orange for buttons and small text on light backgrounds (WCAG AA) */
-  --accent-strong: 28 95% 30%;
+  --accent-strong: 38 85% 38%;
 
-  /* Background #F8FAFC */
-  --background: 210 20% 98%;
+  /* Warm cream background */
+  --background: 40 33% 96%;
   
-  /* Dark Text #1F2937 */
-  --foreground: 215 28% 17%;
+  /* Deep forest text */
+  --foreground: 90 10% 20%;
 
   /* Success #22C55E */
   --success: 142 71% 45%;
   --success-foreground: 0 0% 100%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 215 28% 17%;
-  --card-border: 214 32% 91%;
+  --card: 40 30% 99%;
+  --card-foreground: 90 10% 20%;
+  --card-border: 40 18% 88%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 215 28% 17%;
-  --popover-border: 214 32% 91%;
+  --popover: 40 30% 99%;
+  --popover-foreground: 90 10% 20%;
+  --popover-border: 40 18% 88%;
 
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 18% 42%;
+  --muted: 40 25% 92%;
+  --muted-foreground: 85 8% 38%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 213 72% 25%;
+  --border: 40 18% 86%;
+  --input: 40 18% 86%;
+  --ring: 82 22% 32%;
 
   --app-font-sans: 'Inter', sans-serif;
-  --app-font-heading: 'Poppins', sans-serif;
+  --app-font-heading: 'Cormorant Garamond', Georgia, serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
@@ -123,39 +122,39 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  --primary: 213 72% 25%;
+  --primary: 82 22% 32%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 202 68% 59%;
+  --secondary: 85 18% 42%;
   --secondary-foreground: 0 0% 100%;
   
-  --accent: 37 90% 51%;
+  --accent: 42 72% 48%;
   --accent-foreground: 0 0% 100%;
-  --accent-strong: 28 95% 30%;
+  --accent-strong: 38 85% 38%;
 
-  --background: 210 20% 98%;
-  --foreground: 215 28% 17%;
+  --background: 40 33% 96%;
+  --foreground: 90 10% 20%;
 
   --success: 142 71% 45%;
   --success-foreground: 0 0% 100%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 215 28% 17%;
-  --card-border: 214 32% 91%;
+  --card: 40 30% 99%;
+  --card-foreground: 90 10% 20%;
+  --card-border: 40 18% 88%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 215 28% 17%;
-  --popover-border: 214 32% 91%;
+  --popover: 40 30% 99%;
+  --popover-foreground: 90 10% 20%;
+  --popover-border: 40 18% 88%;
 
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 18% 42%;
+  --muted: 40 25% 92%;
+  --muted-foreground: 85 8% 38%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 213 72% 25%;
+  --border: 40 18% 86%;
+  --input: 40 18% 86%;
+  --ring: 82 22% 32%;
 }
 
 @layer base {

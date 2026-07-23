@@ -40,17 +40,11 @@ export function Footer() {
               </span>
             </div>
             <p className="text-primary-foreground/80 mt-4 leading-relaxed text-sm">
-              Providing premium residential care and supported living for children and young people across the UK. A trusted partner for Local Authorities, committed to safeguarding and excellence.
+              Providing safe, nurturing residential care and supported living for children and young people across the UK. Committed to safeguarding, compassion, and excellence.
             </p>
-            <div className="flex gap-4 mt-6">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Ofsted_logo.svg"
-                alt="Ofsted Registered"
-                className="h-10 bg-white p-1 rounded"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <p className="text-primary-foreground/70 mt-4 text-xs leading-relaxed border-l-2 border-accent/60 pl-3">
+              Ongoing Ofsted registration process — accreditation details will be published here once complete.
+            </p>
           </div>
 
           <div>

@@ -94,7 +94,7 @@ export default function Homes() {
               <div className="bg-primary-foreground/10 p-6 rounded-xl border border-primary-foreground/20">
                 <Home className="h-8 w-8 text-accent mb-4" />
                 <h3 className="font-bold text-lg mb-2">Environmental Audits</h3>
-                <p className="text-sm text-primary-foreground/70">Regular independent audits of the physical space ensure it meets the highest Ofsted standards.</p>
+                <p className="text-sm text-primary-foreground/70">Regular independent audits of the physical space ensure it meets the highest standards of safety and quality.</p>
               </div>
             </div>
           </div>
